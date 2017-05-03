@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger, state, style } from '@angular/animations';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
     selector: 'app-root',
@@ -16,10 +16,19 @@ import { trigger, state, style } from '@angular/animations';
                 backgroundColor: 'blue',
                 width: '300px',
                 height: '50px'
-            }))
+            })),
+            transition('default => clicked', animate('1s 500ms ease-in'))
         ])
     ]
 })
 export class AppComponent {
-    title = 'app works!';
+    clickInfo = 'default';
+
+    onClick() {
+        this.clickInfo = 'clicked';
+
+        setTimeout(() => {
+            this.clickInfo = 'default';
+        }, 3000);
+    }
 }
