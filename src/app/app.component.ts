@@ -17,18 +17,16 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
                 width: '300px',
                 height: '50px'
             })),
-            transition('default => clicked', animate('1s 500ms ease-in'))
+            transition('default => clicked', animate('1s 500ms ease-in')),
+            // transition('clicked => default', animate('300ms ease-out'))
+            transition('clicked => default', animate(300))
         ])
     ]
 })
 export class AppComponent {
     clickInfo = 'default';
 
-    onClick() {
-        this.clickInfo = 'clicked';
-
-        setTimeout(() => {
-            this.clickInfo = 'default';
-        }, 3000);
+    toggleState() {
+        this.clickInfo = (this.clickInfo === 'default') ? 'clicked' : 'default';
     }
 }
