@@ -14,7 +14,11 @@ export class AppComponent {
     clickInfo = 'default';
     numberEntered;
 
-    toggleState() {
+    toggleClickState() {
         this.clickInfo = (this.clickInfo === 'default') ? 'clicked' : 'default';
+    }
+
+    setNumberState(index) {
+        return Number(this.numberEntered) === index ? 'selected' : 'unselected';
     }
 }

@@ -1,5 +1,5 @@
 <div
-    (click)="toggleState()"
+    (click)="toggleClickState()"
     [@clickedState]="clickInfo">
 </div>
 
@@ -8,14 +8,13 @@
 <input type="number" (input)="numberEntered = $event.target.value">
 <br>
 <br>
-<span [@numberEnteredState]="numberEntered == 1 ? 'selected' : 'unselected'">1</span>
-<span [@numberEnteredState]="numberEntered == 2 ? 'selected' : 'unselected'">2</span>
-<span [@numberEnteredState]="numberEntered == 3 ? 'selected' : 'unselected'">3</span>
-<span [@numberEnteredState]="numberEntered == 4 ? 'selected' : 'unselected'">4</span>
-<span [@numberEnteredState]="numberEntered == 5 ? 'selected' : 'unselected'">5</span>
-<span [@numberEnteredState]="numberEntered == 6 ? 'selected' : 'unselected'">6</span>
-<span [@numberEnteredState]="numberEntered == 7 ? 'selected' : 'unselected'">7</span>
-<span [@numberEnteredState]="numberEntered == 8 ? 'selected' : 'unselected'">8</span>
-<span [@numberEnteredState]="numberEntered == 9 ? 'selected' : 'unselected'">9</span>
-<span [@numberEnteredState]="numberEntered == 0 ? 'selected' : 'unselected'">0</span>
-
+<span [@numberEnteredState]="setNumberState(1)">1</span>
+<span [@numberEnteredState]="setNumberState(2)">2</span>
+<span [@numberEnteredState]="setNumberState(3)">3</span>
+<span [@numberEnteredState]="setNumberState(4)">4</span>
+<span [@numberEnteredState]="setNumberState(5)">5</span>
+<span [@numberEnteredState]="setNumberState(6)">6</span>
+<span [@numberEnteredState]="setNumberState(7)">7</span>
+<span [@numberEnteredState]="setNumberState(8)">8</span>
+<span [@numberEnteredState]="setNumberState(9)">9</span>
+<span [@numberEnteredState]="setNumberState(0)">0</span>
