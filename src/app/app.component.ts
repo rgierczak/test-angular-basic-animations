@@ -20,11 +20,35 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
             transition('default => clicked', animate('1s 500ms ease-in')),
             // transition('clicked => default', animate('300ms ease-out'))
             transition('clicked => default', animate(300))
+        ]),
+        trigger('numberEnteredState', [
+            state('unselected', style({
+                border: '1px solid black',
+                padding: '5px',
+                backgroundColor: 'white'
+            })),
+            state('selected', style({
+                border: '2px solid blue',
+                padding: '4px',
+                backgroundColor: 'lightblue'
+            })),
+            transition('unselected => selected', [
+                style({
+                    border: '2px solid #000000',
+                    padding: '4px'
+                }),
+                animate(300),
+                style({
+                    backgroundColor: '#ff0000'
+                }),
+                animate(300)
+            ])
         ])
     ]
 })
 export class AppComponent {
     clickInfo = 'default';
+    numberEntered;
 
     toggleState() {
         this.clickInfo = (this.clickInfo === 'default') ? 'clicked' : 'default';
