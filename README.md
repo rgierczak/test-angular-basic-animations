@@ -2,6 +2,24 @@
 
 > The application shows basic features of Angular Animations module.
 
+## Installation
+
+```
+$ npm install
+```
+
+## Usage
+
+```
+$ npm run start
+```
+
+Run the project in your browser
+
+```
+localhost:4200
+```
+
 ## Enable Angular Animations module
 
 The Angular Animations module was built basic on [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
